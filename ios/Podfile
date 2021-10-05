@@ -3,6 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '11.0'
 
+
 target 'test' do
   config = use_native_modules!
 
@@ -13,7 +14,7 @@ target 'test' do
   )
 
   target 'testTests' do
-    inherit! :complete
+    inherit! :completepa
     # Pods for testing
   end
 

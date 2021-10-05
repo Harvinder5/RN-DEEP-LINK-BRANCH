@@ -26,6 +26,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import branch, {BranchEvent} from 'react-native-branch';
+import Config from 'react-native-config';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -89,6 +90,22 @@ const Section = ({children, title}): Node => {
     // createLink();
     readDeepLink();
   }, []);
+
+  const handleCommodityVarityDetails = url => {
+    console.log('ohh url', url);
+    const regexp = /\d/gi;
+    const matches_array = url?.match(regexp);
+    const commodityVarietyId = matches_array
+      ?.map(i => Number(i))
+      .join('')
+      .toString();
+    console.log('id', commodityVarietyId);
+    navigate('CommodityVarietyDetails', {
+      commodityVarietyId: commodityVarietyId,
+    });
+  };
+
+  console.log(Config.app_name);
 
   return (
     <View style={styles.sectionContainer}>

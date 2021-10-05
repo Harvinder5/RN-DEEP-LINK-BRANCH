@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "ENVFILE=.env.dev react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "17.0.2",
     "react-native": "0.66.0",
-    "react-native-branch": "^5.0.4"
+    "react-native-branch": "^5.0.4",
+    "react-native-config": "^1.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
